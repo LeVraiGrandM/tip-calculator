@@ -51,6 +51,7 @@ document.querySelector("#people").addEventListener("input", (e) => {
 
 document.querySelector("#percent").addEventListener("input", (e) => {
    btnValue = e.target.value;
+   calcTip(billValue, btnValue, peopleValue);
 });
 
 btns.forEach((btn) => {
