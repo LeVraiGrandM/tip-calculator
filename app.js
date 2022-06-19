@@ -68,4 +68,6 @@ document.querySelector(".reset").addEventListener("click", () => {
    peopleValue = 0;
    tipPerPerson = 0;
    tipTotal = 0;
+   tipPerPersonSpan.innerHTML = `$0.00`;
+   document.querySelector('.total-tip').innerHTML = `$0.00`
 });
