@@ -1,0 +1,215 @@
+*,
+::before,
+::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Space Mono", sans-serif;
+}
+
+body {
+   background: hsl(185, 41%, 84%);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   height: 100vh;
+}
+
+.app {
+   background-color: #fff;
+   width: 700px;
+   height: 350px;
+   border-radius: 20px;
+   padding: 30px;
+   display: flex;
+   justify-content: space-between;
+}
+
+p {
+   color: hsl(186, 14%, 43%);
+}
+
+.calculator {
+   width: 50%;
+}
+
+input {
+   background: hsl(189, 41%, 97%);
+   border: none;
+   border-radius: 5px;
+}
+
+input:focus {
+   outline: none !important;
+   border: 2px solid hsl(172, 67%, 45%);
+}
+/* bill */
+
+#bill {
+   width: 100%;
+   height: 40px;
+   text-align: end;
+   font-size: 1.2rem;
+}
+
+.bill-parent {
+   position: relative;
+   margin: 5px 0 20px 0;
+}
+
+.bill-img {
+   position: absolute;
+   left: 10px;
+   top: 50%;
+   transform: translatey(-50%);
+}
+
+/* percent*/
+
+.percent-label {
+   margin: 10px 0 5px 0;
+}
+
+.percent-btns {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   gap: 10px;
+}
+
+.percent-btns button {
+   border: none;
+   background: hsl(183, 100%, 15%);
+   color: #fff;
+   width: 100px;
+   height: 35px;
+   border-radius: 5px;
+   font-size: 1.2rem;
+   font-weight: 700;
+}
+
+.percent-btns button:hover {
+   background: hsl(172, 67%, 45%);
+   color: hsl(183, 100%, 15%);
+   transition: 0.2s ease-in;
+   cursor: pointer;
+}
+
+.percent-btns button:focus {
+   background: hsl(172, 67%, 45%);
+   color: hsl(183, 100%, 15%);
+}
+
+.percent-btns input {
+   width: 100px;
+   height: 35px;
+   text-align: end;
+   font-size: 1.1rem;
+   font-weight: 700;
+}
+
+/* nb of people */
+
+.error-text {
+   font-size: 0.8rem;
+   color: #fb5607;
+   visibility: hidden;
+}
+
+.people-div {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 30px;
+}
+
+#people {
+   width: 100%;
+   height: 40px;
+   text-align: end;
+   font-size: 1.2rem;
+}
+
+.people-error{
+   border: 2px solid #fb5607;
+}
+
+.people-parent {
+   position: relative;
+}
+
+.people-parent img {
+   position: absolute;
+   left: 10px;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+aside {
+   width: 45%;
+   border-radius: 10px;
+   background: hsl(183, 100%, 15%);
+   padding: 20px;
+   position: relative;
+}
+
+aside span{
+   font-size: 1.7rem;
+   color: hsl(172, 67%, 45%);
+   font-weight: 700;
+}
+
+.total-container{
+   display: flex;
+   justify-content: space-between;
+   margin: 0 0 20px 0;
+}
+
+.reset{
+   width: 80%;
+   height: 40px;
+   font-weight: 700;
+   border: none;
+   background: hsl(172, 67%, 45%);
+   border-radius: 10px;
+   position: absolute;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.reset:hover{
+   cursor: pointer;
+}
+
+.btn-active{
+   background-color: hsl(172, 67%, 45%);
+   color: hsl(183, 100%, 15%);
+}
+
+@media (max-width: 770px){
+   .app{
+      flex-direction: column;
+      width: 320px;
+      height: 700px;
+      margin: 10px 0;
+      justify-content: space-evenly;
+   }
+   .calculator{
+      width: 100%;
+   }
+   .percent-btns{
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+   }
+   .percent-btns button, #percent{
+      width: 100%;
+   }
+   .bill-label, .percent-label, .people-label{
+      font-size: 0.8rem;
+   }
+   aside{
+      width: 100%;
+      height: 230px;
+   }
+}
