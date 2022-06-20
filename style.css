@@ -18,29 +18,42 @@ body {
 
 .app {
    background-color: #fff;
-   width: 700px;
-   height: 350px;
+   width: 900px;
+   height: 450px;
    border-radius: 20px;
    padding: 30px;
    display: flex;
    justify-content: space-between;
 }
 
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+   appearance: none;
+   outline: none;
+}
+
 p {
    color: hsl(186, 14%, 43%);
+   font-weight: 700;
 }
 
 .calculator {
    width: 50%;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
 
 input {
    background: hsl(189, 41%, 97%);
    border: none;
    border-radius: 5px;
+   padding: 5px;
+   font-weight: 1000;
 }
 
-input:focus {
+input:hover {
    outline: none !important;
    border: 2px solid hsl(172, 67%, 45%);
 }
@@ -48,7 +61,7 @@ input:focus {
 
 #bill {
    width: 100%;
-   height: 40px;
+   height: 50px;
    text-align: end;
    font-size: 1.2rem;
 }
@@ -67,10 +80,6 @@ input:focus {
 
 /* percent*/
 
-.percent-label {
-   margin: 10px 0 5px 0;
-}
-
 .percent-btns {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
@@ -82,8 +91,8 @@ input:focus {
    border: none;
    background: hsl(183, 100%, 15%);
    color: #fff;
-   width: 100px;
-   height: 35px;
+   width: 100%;
+   height: 50px;
    border-radius: 5px;
    font-size: 1.2rem;
    font-weight: 700;
@@ -102,10 +111,10 @@ input:focus {
 }
 
 .percent-btns input {
-   width: 100px;
-   height: 35px;
+   width: 100%;
+   height: 50px;
    text-align: end;
-   font-size: 1.1rem;
+   font-size: 1.7rem;
    font-weight: 700;
 }
 
@@ -125,7 +134,7 @@ input:focus {
 
 #people {
    width: 100%;
-   height: 40px;
+   height: 50px;
    text-align: end;
    font-size: 1.2rem;
 }
@@ -147,22 +156,29 @@ input:focus {
 
 aside {
    width: 45%;
+   height: 100%;
    border-radius: 10px;
    background: hsl(183, 100%, 15%);
-   padding: 20px;
+   padding: 30px;
    position: relative;
 }
 
 aside span{
-   font-size: 1.7rem;
+   font-size: 2.5rem;
    color: hsl(172, 67%, 45%);
    font-weight: 700;
+}
+
+.values-parent{
+   display: flex;
+   flex-direction: column;
+   height: 50%;
+   justify-content: space-evenly;
 }
 
 .total-container{
    display: flex;
    justify-content: space-between;
-   margin: 0 0 20px 0;
 }
 
 .reset{
@@ -171,9 +187,9 @@ aside span{
    font-weight: 700;
    border: none;
    background: hsl(172, 67%, 45%);
-   border-radius: 10px;
+   border-radius: 5px;
    position: absolute;
-   bottom: 20px;
+   bottom: 40px;
    left: 50%;
    transform: translateX(-50%);
 }
@@ -182,16 +198,26 @@ aside span{
    cursor: pointer;
 }
 
+.reset-disabled{
+   background: hsl(184, 14%, 56%);
+   color: hsl(186, 14%, 43%);
+}
+
 .btn-active{
    background-color: hsl(172, 67%, 45%);
    color: hsl(183, 100%, 15%);
 }
 
 @media (max-width: 770px){
+   
+   body{
+      height: 130vh;
+   }
    .app{
+      margin: 20px 0;
       flex-direction: column;
       width: 320px;
-      height: 700px;
+      height: 800px;
       margin: 10px 0;
       justify-content: space-evenly;
    }
@@ -210,6 +236,12 @@ aside span{
    }
    aside{
       width: 100%;
-      height: 230px;
+      height: 300px;
+   }
+   aside p{
+      font-size: 0.8rem;
+   }
+   aside span{
+      font-size: 1.7rem;
    }
 }

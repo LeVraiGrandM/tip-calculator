@@ -23,11 +23,12 @@ let calcTip = (bill, percent, nbPeople) => {
       2
    );
    tipPerPersonSpan.innerHTML = `$${tipPerPerson}`;
-   document.querySelector('.total-tip').innerHTML = `$${totalPerPerson}`
+   document.querySelector(".total-tip").innerHTML = `$${totalPerPerson}`;
 };
 
 bill.addEventListener("input", (e) => {
    billValue = parseFloat(e.target.value);
+   document.querySelector(".reset").classList.remove("reset-disabled");
 });
 
 btns.forEach((btn) => {
@@ -47,11 +48,13 @@ document.querySelector("#people").addEventListener("input", (e) => {
    document.querySelector("#people").classList.remove("people-error");
    document.querySelector(".error-text").style.visibility = "hidden";
    calcTip(billValue, btnValue, peopleValue);
+   document.querySelector(".reset").classList.remove("reset-disabled");
 });
 
 document.querySelector("#percent").addEventListener("input", (e) => {
    btnValue = e.target.value;
    calcTip(billValue, btnValue, peopleValue);
+   document.querySelector(".reset").classList.remove("reset-disabled");
 });
 
 btns.forEach((btn) => {
@@ -63,12 +66,13 @@ btns.forEach((btn) => {
 document.querySelector(".reset").addEventListener("click", () => {
    bill.value = 0;
    document.querySelector("#people").value = 0;
-   document.querySelector("#percent").value = 0;
+   document.querySelector("#percent").value = 'Custom';
    billValue = 0;
    btnValue = 0;
    peopleValue = 0;
    tipPerPerson = 0;
    tipTotal = 0;
    tipPerPersonSpan.innerHTML = `$0.00`;
-   document.querySelector('.total-tip').innerHTML = `$0.00`
+   document.querySelector(".total-tip").innerHTML = `$0.00`;
+   document.querySelector(".reset").classList.add("reset-disabled");
 });

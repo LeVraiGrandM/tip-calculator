@@ -26,49 +26,68 @@
       <img src="images/logo.svg" alt="Logo" />
       <div class="app">
          <article class="calculator">
-            <p class="bill-label">Bill</p>
-            <div class="bill-parent">
-               <input type="number" name="bill" id="bill" min="1" />
-               <img
-                  src="images/icon-dollar.svg"
-                  alt="dollar"
-                  class="bill-img"
-               />
+            <div>
+               <p class="bill-label">Bill</p>
+               <div class="bill-parent">
+                  <input
+                     type="number"
+                     name="bill"
+                     id="bill"
+                     min="1"
+                     placeholder="0"
+                  />
+                  <img
+                     src="images/icon-dollar.svg"
+                     alt="dollar"
+                     class="bill-img"
+                  />
+               </div>
             </div>
-            <p for="percent" class="percent-label">Select tip %</p>
-            <div class="percent-btns">
-               <button class="btn" value="5">5%</button>
-               <button class="btn" value="10">10%</button>
-               <button class="btn" value="15">15%</button>
-               <button class="btn" value="20">20%</button>
-               <button class="btn" value="50">50%</button>
-               <input type="number" id="percent" placeholder="Custom" min="1" />
+            <div>
+               <p for="percent" class="percent-label">Select tip %</p>
+               <div class="percent-btns">
+                  <button class="btn" value="5">5%</button>
+                  <button class="btn" value="10">10%</button>
+                  <button class="btn" value="15">15%</button>
+                  <button class="btn" value="20">20%</button>
+                  <button class="btn" value="50">50%</button>
+                  <input
+                     type="number"
+                     id="percent"
+                     placeholder="Custom"
+                     min="1"
+                  />
+               </div>
             </div>
-            <div class="people-div">
-               <p class="people-label">Number of people</p>
-               <p class="error-text">Can't be zero</p>
-            </div>
-            <div class="people-parent">
-               <input type="number" id="people" min="1" />
-               <img src="images/icon-person.svg" alt="" />
+            <div>
+               <div class="people-div">
+                  <p class="people-label">Number of people</p>
+                  <p class="error-text">Can't be zero</p>
+               </div>
+               <div class="people-parent">
+                  <input type="number" id="people" min="1" placeholder="0" />
+                  <img src="images/icon-person.svg" alt="" />
+               </div>
             </div>
          </article>
          <aside>
-            <div class="total-container">
-               <div>
-                  <p>Tip amount</p>
-                  <p>/person</p>
+            <div class="values-parent">
+               <div class="total-container">
+                  <div>
+                     <p>Tip amount</p>
+                     <p>/person</p>
+                  </div>
+                  <span class="tip-person">$0.00</span>
                </div>
-               <span class="tip-person">$0.00</span>
-            </div>
-            <div class="total-container">
-               <div>
-                  <p>Total</p>
-                  <p>/person</p>
+               <div class="total-container">
+                  <div>
+                     <p>Total</p>
+                     <p>/person</p>
+                  </div>
+                  <span class="total-tip">$0.00</span>
                </div>
-               <span class="total-tip">$0.00</span>
             </div>
-            <button class="reset">RESET</button>
+            <button class="reset reset-disabled">RESET</button>
          </aside>
       </div>
 
